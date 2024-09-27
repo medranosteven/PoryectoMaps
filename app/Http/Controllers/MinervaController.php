@@ -1,5 +1,5 @@
 <?php
-
+//prueba
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
