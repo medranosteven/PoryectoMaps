@@ -1,0 +1,434 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+
+
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  width: 100%; /* Asegura que tomen toda la anchura del viewport */
+  margin: 0; /* Elimina los márgenes */
+  padding: 0; /* Elimina los paddings */
+  overflow-x: hidden;
+
+}
+
+#root {
+  
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% de la altura del viewport */
+  width: 100vw; 
+}
+
+.header {
+  background: linear-gradient( 180deg, #A00 0%, #FF1F1F 100%);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 100px; /* Two columns: title/search and logo */
+  grid-template-rows: auto auto auto; /* Three rows: title, subtitle, search */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.header-title {
+  grid-column: 1; /* First column */
+  grid-row: 1; /* First row */
+  font-size: 40px;
+  text-align: center;
+}
+
+.header-subtitle {
+  grid-column: 1; /* First column */
+  grid-row: 2; /* Second row */
+  font-size: 40px;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 15px;
+  grid-column: 1; /* First column */
+  grid-row: 3; /* Third row */
+  margin-bottom: 20px;
+}
+
+.search-bar img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  
+  /* Esto limitará el tamaño sin distorsionar la imagen */
+  max-width: 150px; /* Limita el ancho máximo de la imagen */
+  height: auto; /* Mantiene la proporción */
+}
+/* Busqueda */
+.busqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media(min-width:480px){
+  .busqueda{
+      width: 50%;
+  }
+}
+
+.busqueda__titulo {
+  color: var(--blanco);
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .busqueda__titulo {
+      font-size: 4rem; /* Ajustar el tamaño de fuente */
+  }
+}
+
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 4rem;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.boton__texto {
+  width: 80%;
+  background-color: transparent;
+  font-size: 1.6rem;
+  color: var(--blanco);
+  border: none;
+  outline: none;
+}
+
+.type__icon {
+  margin-left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+input::placeholder {
+  color: var(--blanco);
+  font-size: 1.6rem;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.content {
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  flex-grow: 1;
+  gap: 10px;
+
+}
+
+/* Footer al final del contenido sin dejar espacios */
+.footer {
+  width: 100%;
+  height: 108px;
+  padding: 32px 0px;
+  background: linear-gradient( 180deg, #A00 0%, #FF1F1F 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+
+  
+}
+
+.footer-text {
+  color: white;
+  font-size: 25px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+
+.material-symbols-outlined {
+color: #000000;
+font-variation-settings:
+
+'FILL' 0,
+'wght' 400,
+'GRAD' 0,
+'opsz' 24
+}
+
+/* Contenedor del menú desplazable */
+.menu-container {
+  display: flex;
+  overflow-x: hidden; /* Evitar que la barra de desplazamiento sea visible */
+  white-space: nowrap;
+  margin: 20px;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  cursor: grab; /* Indicar al usuario que se puede arrastrar */
+  user-select: none; /* Evitar selección de texto mientras se arrastra */
+
+
+}
+
+/* Estilo para cada opción del menú */
+.menu-item {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 0 10px;
+  font-size: 20px;
+  color: #AA0000;
+  font-weight: bold;
+  border: 2px solid #AA0000;
+  border-radius: 15px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  flex-shrink: 0; /* Para evitar que las opciones se compriman */
+}
+
+/* Estilo para la opción activa */
+.menu-item.active {
+  background-color: #AA0000;
+  color: white;
+}
+
+/* Efecto al pasar el mouse */
+.menu-item:hover {
+  background-color: #AA0000;
+  color: white;
+}
+
+/* Sección correspondiente a cada aula */
+.section {
+  padding: 30px;
+  height: 400px;
+  border: 1px solid #ddd;
+  margin: 30px 0;
+  font-size: 24px;
+}
+
+/* Contenedor de la sección */
+.section-container {
+padding: 10px;
+margin-bottom: 90px; 
+}
+
+/* Título de la sección */
+.section-title {
+font-size: 31px;
+color: #AA0000;
+font-weight: bold;
+margin-bottom: 10px;
+text-align: left;
+}
+
+
+
+.section-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.section-containers {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #AA0000;;
+  padding: 10px 0;
+  font-size: 18px;
+  width: 100%;
+}
+.content {
+  display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espaciado entre tarjetas */
+    margin-bottom: 10px; 
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Asegurar margen entre tarjetas */
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Asegura que el texto mantenga su color original */
+  display: block; /* Asegura que el enlace cubra toda la tarjeta */
+}
+.card:hover {
+  text-decoration: none; /* Asegura que no aparezca un subrayado al hacer hover */
+}
+
+.card img {
+  width: 100%;  /* Asegura que la imagen cubra el ancho de la tarjeta */
+  max-width: 200px;  /* Limita el tamaño máximo de la imagen */
+  height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+.hidden-cards {
+  display: none;
+}
+
+.view-more-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #AA0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.material-symbols-outlined {
+  color: #000000;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.card-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card-body h3 {
+  font-size: 25px;
+  color: #AA0000;
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 15px;
+  color: #AA0000;
+  margin: 5px 0;
+}
+
+/* Botón para ver más */
+.view-more-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.view-more-btn .btn {
+  padding: 10px 20px;
+  border: 1px solid #FF1F1F;
+  border-radius: 10px;
+  color: #FF1F1F;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Ocultar inicialmente las tarjetas adicionales */
+.hidden-cards {
+  display: none;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .header-grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+    grid-template-rows: auto auto auto; /* Adjust rows to accommodate changes */
+  }
+
+  .header-title, .header-subtitle {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .header-title {
+    font-size: 30px; /* Reduce title size for smaller screens */
+  }
+
+  .header-subtitle {
+    font-size: 20px;
+  }
+
+  .logo img {
+    max-width: 80px; /* Smaller logo for small screens */
+  }
+
+  .search-bar {
+    grid-column: 1; /* Keep search bar in the same column */
+  }
+}
+
+.menu-item {
+  text-decoration: none; /* Elimina la línea debajo del texto */
+  display: inline-block;
+  font-size: 16px;
+}
+
+.menu-item:hover {
+color: #f04; /* Cambia el color al pasar el mouse si es necesario */
+}

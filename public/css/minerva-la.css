@@ -1,0 +1,277 @@
+/* General body styling */
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  /* Círculo flotante para "volver atrás" */
+  .back-button {
+    width: 77px;
+    height: 77px;
+    padding: 17.71px;
+    background: #AA0000;
+    border-radius: 50%;
+    display: flex;
+
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 30px; /* Separa el botón del grid de imágenes */
+
+  }
+  
+  /* Botón de retorno (flecha) */
+.circle-button {
+  position: fixed; /* Fijo en la pantalla, no se mueve al hacer scroll */
+  top: 20px; /* Posición desde la parte superior de la pantalla */
+  left: 20px; /* Posición desde la parte izquierda de la pantalla, ajustado a la izquierda */
+  width: 60px; /* Tamaño del botón */
+  height: 60px; /* Tamaño del botón */
+  background-color: #AA0000; /* Color de fondo del botón */
+  border-radius: 50%; /* Forma redonda */
+  display: flex; /* Centra el ícono en el botón */
+  justify-content: center; /* Centrado horizontal del ícono */
+  align-items: center; /* Centrado vertical del ícono */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+  cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+}
+
+.circle-button .inner-circle {
+  font-size: 24px; /* Tamaño del ícono */
+  color: white; /* Color del ícono */
+}
+
+.circle-button:hover {
+  background-color: #FF1F1F; /* Cambio de color al pasar el mouse */
+}
+
+
+/* Asegurarse de que el ícono no se subraye */
+.circle-button a {
+  text-decoration: none;
+}
+
+  
+  .back-button .icon-box {
+    width: 40.81px;
+    height: 40.81px;
+    position: relative;
+  
+  }
+  
+  .back-button .icon-arrow {
+    border: solid white;
+    border-width: 0 3.4px 3.4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 100%;
+    max-width: 1233px;
+    flex-grow: 1;
+    position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px; /* Añadir espacio para el botón flotante */
+  }
+  
+/* Footer al final del contenido sin dejar espacios */
+.footer {
+  width: 100%;
+  height: 108px;
+  padding: 32px 0px;
+  background: linear-gradient( 180deg, #A00 0%, #FF1F1F 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+
+  
+}
+
+.footer-text {
+  color: white;
+  font-size: 25px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+  
+  /* Contenedor de imágenes */
+  .image-grid {
+    width: 1233px;
+    height: 676.59px;
+    margin-top: 20px; /* Reducimos el margen para ajustarlo mejor */
+    position: relative;
+  }
+  
+  .main-image {
+    width: 501.91px;
+    height: 676.59px;
+    position: absolute;
+    border-radius: 11.06px 0 0 11.06px;
+  }
+  
+  .grid-image {
+    width: 346.03px;
+    height: 331.66px;
+    position: absolute;
+  }
+  
+  .grid-image:nth-child(2) {
+    left: 520.90px;
+    top: 0;
+  }
+  
+  .grid-image:nth-child(3) {
+    left: 886.97px;
+    top: 0;
+    border-radius: 0  11.06px 0 0;
+  }
+  
+  .grid-image:nth-child(4) {
+    left: 520.90px;
+    top: 344.93px;
+  }
+  
+  .grid-image:nth-child(5) {
+    left: 886.97px;
+    top: 344.93px;
+    border-radius: 0 0  11.06px 0;
+    position: relative; /* Para que el botón esté dentro de la imagen */
+  }
+  
+  /* Botón de fotos flotante en la parte inferior de la quinta imagen del grid */
+  .button-box {
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: #D2D2D2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    z-index: 10;
+  }
+  
+  .button-text {
+    color: black;
+    font-size: 15.45px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    text-align: center;
+  }
+  
+  /* Contenedor de imagen destacada y texto */
+  .highlighted-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1233px;
+  }
+  
+  /* Imagen destacada ajustada al tamaño de las dos filas del grid */
+  .highlighted-image {
+    width: 712px;
+    height: 676.59px;
+    border-radius: 15.68px;
+    margin-left: 0;
+  }
+  
+  .info-box {
+    width: 501.91px;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  .auditorio-text {
+    color: #AA0000;
+    font-size: 48px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Estilos de los iconos usando Bootstrap Icons */
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  .location,
+  .address,
+  .capacity {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .location-icon::before {
+    content: '\f041';
+    font-family: 'Bootstrap Icons';
+    font-size: 24px;
+    display: inline-block;
+  }
+  
+  .address-icon::before {
+    content: '\f042';
+    font-family: 'Bootstrap Icons';
+    font-size: 24px;
+    display: inline-block;
+  }
+  
+  .capacity-icon::before {
+    content: '\f043';
+    font-family: 'Bootstrap Icons';
+    font-size: 24px;
+    display: inline-block;
+  }
+  
+  .location-text,
+  .address-text,
+  .capacity-text {
+    color: #AA0000;
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+  }
+  
+  .black-box {
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+  
+  .black-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border: 2px solid black;
+  }
+  

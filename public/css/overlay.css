@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  min-height: calc(100vh - 140px); /* Ajusta esto según la altura de tu header/footer */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.image, .empty-box {
+  width: 48%;
+  height: 481px; /* Asegura que empty-box tenga altura definida */
+  background-color: #f0f0f0; /* Solo para empty-box */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.large-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #AA0000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.circle-button:hover {
+  background-color: #f73636;
+}
+
+.inner-circle {
+  font-size: 24px;
+}
+
+.footer {
+  width: 100%;
+  height: 108px;
+  background: linear-gradient(180deg, #A00 0%, #FF1F1F 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0; /* Fija el footer al final de la página */
+}
+
+.footer-text {
+  color: white;
+  font-size: 25px;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
