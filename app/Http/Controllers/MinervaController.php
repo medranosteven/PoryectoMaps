@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 
-class MinervaController extends Controller
+class MinervaController extends Controller //controlador
 {
     public function index()
     {
